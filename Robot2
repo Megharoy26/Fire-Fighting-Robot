@@ -1,0 +1,19 @@
+#include<avr/io.h>
+#include<util/delay.h>
+int main()
+{
+DDRC = 0XFF;
+{
+while(1)
+{
+PORTC = 0X00;
+_delay_ms(5000);PORTC = 0X01;  //RIGHT
+_delay_ms(5000);PORTC = 0X04;  //LEFT
+_delay_ms(5000);PORTC = 0X05; //FORWARD
+_delay_ms(5000);PORTC = 0X0A;  //BACKWARD
+_delay_ms(5000);PORTC = 0X08;  //REVERSE L/R
+_delay_ms(2000);PORTC = 0X02;  //REVERSE R/L
+_delay_ms(2000);PORTC = 0X09;  //SHARP RIGHT
+_delay_ms(2000);PORTC = 0X06;  //SHARP LEFT
+_delay_ms(2000);PORTC = 0XFF;  //STOP
+_delay_ms(2000);} } }
